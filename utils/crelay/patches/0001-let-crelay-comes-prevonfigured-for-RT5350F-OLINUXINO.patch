@@ -1,0 +1,42 @@
+From 471cd32fb63a252938197d49d82b1bbb9c610cd3 Mon Sep 17 00:00:00 2001
+From: Matthieu Gallien <matthieu_gallien@yahoo.fr>
+Date: Tue, 26 May 2020 19:02:42 +0200
+Subject: [PATCH] let crelay comes prevonfigured for RT5350F OLINUXINO EVB
+
+---
+ conf/crelay.conf | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/conf/crelay.conf b/conf/crelay.conf
+index a44f169..ed2ecdb 100644
+--- a/conf/crelay.conf
++++ b/conf/crelay.conf
+@@ -13,8 +13,8 @@
+ server_iface = 0.0.0.0    # listen interface IP address
+ #server_iface = 127.0.0.1 # to listen on localhost only
+ server_port  = 8000       # listen port
+-relay1_label = Device 1   # label for relay 1
+-relay2_label = Device 2   # label for relay 2
++relay1_label = Relay 1   # label for relay 1
++relay2_label = Relay 2   # label for relay 2
+ relay3_label = Device 3   # label for relay 3
+ relay4_label = Device 4   # label for relay 4
+ relay5_label = Device 5   # label for relay 5
+@@ -26,10 +26,10 @@ pulse_duration = 1 	  # duration of a 'pulse' command in seconds
+ # GPIO driver parameters
+ ################################################
+ [GPIO drv]
+-#num_relays = 8    # Number of GPIOs connected to relays (1 to 8)
+-#active_value = 1       # 1: active high, 0 active low
+-#relay1_gpio_pin = 17   # GPIO pin for relay 1 (17 for RPi GPIO0)
+-#relay2_gpio_pin = 18   # GPIO pin for relay 2 (18 for RPi GPIO1)
++num_relays = 2    # Number of GPIOs connected to relays (1 to 8)
++active_value = 1       # 1: active high, 0 active low
++relay1_gpio_pin = 1   # GPIO pin for relay 1 (17 for RPi GPIO0)
++relay2_gpio_pin = 2   # GPIO pin for relay 2 (18 for RPi GPIO1)
+ #relay3_gpio_pin = 27   # GPIO pin for relay 3 (27 for RPi GPIO2)
+ #relay4_gpio_pin = 22   # GPIO pin for relay 4 (22 for RPi GPIO3)
+ #relay5_gpio_pin = 23   # GPIO pin for relay 5 (23 for RPi GPIO4)
+-- 
+2.27.0.rc0
+
